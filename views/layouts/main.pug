@@ -3,14 +3,13 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        <script src="https://kit.fontawesome.com/b3aed9aa7e.js" crossorigin="anonymous"></script>
-        title Document
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" )
+        title #{siteName} | #{pageTitle}
     body  
     html    
-        include ../partials/header  
+         
         body
-            header  
-                h1 Wetube 
+            include ../partials/header 
             main 
                 block content 
             include ../partials/footer

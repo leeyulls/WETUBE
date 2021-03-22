@@ -10,6 +10,7 @@ import videoRouter from './routers/videoRouter';
 import userVideo from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
+import { localsMiddleware } from "./middleware";
 
 
 
@@ -56,12 +57,15 @@ const app = express();
 app.set("view engine","pug");
 
 //app.use(between); // 전역 middleware 설정
+app.use(helmet());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(helmet());
 app.use(morganLogger("dev")); 
 
+
+
+app.use(localsMiddleware);
 
 
 //ver 1.
