@@ -1,4 +1,10 @@
 extends layouts/main.pug
 
 block content
-    p hello!!! login
+    .form-container 
+        form(action=`/videos${routes.login}`, method="post")
+            input(type="email",name="email", placeholder="Email") 
+            input(type="password",name="password", placeholder="password") 
+            input(type="submit", value="Log in")
+        a.form-container__link(href=`/users${routes.changePassword}`) change Password
+        include partials/socialLogin

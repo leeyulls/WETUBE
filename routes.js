@@ -7,13 +7,13 @@ const SEARCH = "/search";
 
 //Users
 const USERS = "/users";
-const USER_DETAIL = "/:id";
-const USER_PROFILLE = "/edit-profile";
+const EDIT_PROFILLE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
+const USER_DETAIL = "/:id";
 
 //Videos
 const VIDEOS = "/videos";
-const UPLOAD_VIDEO = "upload";
+const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
@@ -26,10 +26,10 @@ const routes = {
     search : SEARCH,
     users : USERS,
     userDetail : USER_DETAIL,
-    userProfile : USER_PROFILLE,
+    editProfile : EDIT_PROFILLE,
     changePassword : CHANGE_PASSWORD,
     videos : VIDEOS,
-    uploadVideo : UPLOAD_VIDEO,
+    upload : UPLOAD,
     videoDetail : VIDEO_DETAIL,
     editVideo : EDIT_VIDEO,
     deleteVideo : DELETE_VIDEO,

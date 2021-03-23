@@ -4,5 +4,5 @@ export const logout         = (req,res) => res.render("logout"          ,{pageTi
 
 export const users          = (req,res) => res.render("users"           ,{pageTitle:"users"}        );
 export const userDetail     = (req,res) => res.render("userDetail"      ,{pageTitle:"userDetail"}   );
-export const userProfile    = (req,res) => res.render("userProfile"     ,{pageTitle:"userProfile"}  );
+export const editProfile    = (req,res) => res.render("editProfile"     ,{pageTitle:"editProfile"}  );
 export const changePassword = (req,res) => res.render("changePassword"  ,{pageTitle:"changePassword"});

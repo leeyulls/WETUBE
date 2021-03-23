@@ -1,5 +1,5 @@
 import express from "express"; 
-import { changePassword, userDetail, userProfile, users } from "../controllers/userController";
+import { changePassword, userDetail, editProfile, users } from "../controllers/userController";
 import routes from "../routes";
 
 //ver 1. 해당 변수만  export
@@ -11,9 +11,9 @@ export default userRouter;
 
 
 userRouter.get(routes.users,    users);
-userRouter.get(routes.userDetail, userDetail);
-userRouter.get(routes.userProfile,   userProfile);
+userRouter.get(routes.editProfile,   editProfile);
 userRouter.get(routes.changePassword,  changePassword);
+userRouter.get(routes.userDetail, userDetail);
 
 
  
