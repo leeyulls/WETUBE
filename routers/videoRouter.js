@@ -7,6 +7,6 @@ export default userVideo;
 
 //userVideo.get(routes.videos,    videos);
 userVideo.get(routes.upload,    upload);
-userVideo.get(routes.videoDetail,   videoDetail);
+userVideo.get(routes.videoDetail(),   videoDetail);
 userVideo.get(routes.editVideo,  editVideo);
 userVideo.get(routes.deleteVideo,   deleteVideo);

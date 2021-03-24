@@ -1,5 +1,34 @@
-export const join           = (req,res) => res.render("join"            ,{pageTitle:"join"}         );
-export const login          = (req,res) => res.render("login"           ,{pageTitle:"login"}        );
+import routes from "../routes";
+
+export const getJoin        = (req,res) => {
+    res.render("join",{pageTitle:"join"}         );
+};
+
+
+export const postJoin       = (req,res) => {
+    console.log(req.body);
+    const{
+        body: {name,email,password,password2}
+    } = req; 
+
+    if(password !== password2){
+        res.status(400);
+    }else{
+        //To Do: 사용자 등록
+        //To Do: 사용자 로그인 
+        res.redirect(routes.home);
+    }
+
+    res.render("join",{pageTitle:"join"}         );
+};
+
+
+export const getLogin       = (req,res) => {
+    res.render("login",{pageTitle:"login"}        );
+}
+export const postLogin      = (req,res) => {
+    res.redirect(routes.home);
+}
 export const logout         = (req,res) => res.render("logout"          ,{pageTitle:"logout"}       );
 
 export const users          = (req,res) => res.render("users"           ,{pageTitle:"users"}        );

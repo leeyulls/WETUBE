@@ -71,9 +71,14 @@ app.use(localsMiddleware);
 //ver 1.
 //app.use("/",globalRouter); // use : 누군가 / 접속시 globalRouter 전체 사용
 //ver 2. routes.js 사용
+app.use(function(req, res, next) {
+    res.setHeader("Content-Security-Policy", "script-src 'self' https://archive.org");
+    return next();
+    });
 app.use(routes.home,globalRouter);
 app.use(routes.users,userRouter); 
 app.use(routes.videos,userVideo);
+
 
 
 export default app; // 누군가 app.js 호출 시 app 반환
