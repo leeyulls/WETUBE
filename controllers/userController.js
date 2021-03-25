@@ -29,7 +29,11 @@ export const getLogin       = (req,res) => {
 export const postLogin      = (req,res) => {
     res.redirect(routes.home);
 }
-export const logout         = (req,res) => res.render("logout"          ,{pageTitle:"logout"}       );
+export const logout         = (req,res) => {
+    //TO DO : 로그아웃 처리
+    //res.render("logout"          ,{pageTitle:"logout"}       );
+    res.redirect(routes.home);
+}
 
 export const users          = (req,res) => res.render("users"           ,{pageTitle:"users"}        );
 export const userDetail     = (req,res) => res.render("userDetail"      ,{pageTitle:"userDetail"}   );
