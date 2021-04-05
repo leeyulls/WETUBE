@@ -1,11 +1,17 @@
 
 import routes from "../routes";
-
+import Video from "../models/Video";
 //ver 1.
 //export const home = (req,res) => res.send("home");
 //ver 2. pug 사용
-export const home = (req,res) => {
-    res.render("home",{pageTitle:"Home",videos:videos});
+export const home = async(req,res) => {
+    try{
+        const videos = await Video.find({});
+        res.render("home",{pageTitle:"Home",videos:videos});
+    }catch(error){
+        console.log(error);
+        res.render("home",{pageTitle:"Home",videos:videos});
+    }
 };
 export const search = (req,res) => {
     console.log(req.query.term);
@@ -24,15 +30,24 @@ export const search = (req,res) => {
 export const getUpload         = (req,res) => {
     res.render("upload",{pageTitle:"upload"});
 }
-export const postUpload         = (req,res) => {
+export const postUpload         = async(req,res) => {
     //res.render("upload",{pageTitle:"upload"});
     
     const{
-        body:{file,title,description}
+        body:{title,description},
+        file:{path}
     } = req;
 
+   
+
+    const newVideo = await Video.create({
+        filUrl : path,
+        title,
+        description
+    });
+    console.log(newVideo);
     //TO DO : 비디오 업로드 및 저장
-    res.redirect(routes.videoDetail(324393));
+   res.redirect(routes.videoDetail(newVideo.id));
 }
 
 
