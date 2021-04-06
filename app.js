@@ -58,6 +58,10 @@ app.set("view engine","pug");
 
 //app.use(between); // 전역 middleware 설정
 app.use(helmet());
+
+//디렉토리에서 파일을 보내주는 미들웨어 /uploads로 접근하면 upload 폴더로 이동시켜줌
+app.use("/upload",express.static("upload"));
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
